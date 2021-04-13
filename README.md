@@ -19,7 +19,7 @@ esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
 • Arquitetura MVVM;
 • Testes unitários em JUnit, Roboletrice / ou Mockk;
 • Tratativa dos erros de API;
-• Acessibilidade, utilizar https://guia-wcag.com/para referência;
+• Acessibilidade, utilizar https://guia-wcag.com/ para referência;
 • Reaproveitamento dos objetos visuais;
 • Modularização.
 
@@ -34,12 +34,12 @@ As características funcionais e não funcionais do app consistem em:
 como a tela dedetalhes (Só pode haver uma tela de detalhes para ser usada 
 no SuperAppe nodetalhamento de moedas favoritas);
 • Deve existir uma tela padrão para erro com a opção de “tentar novamente”;
-•O design deve ser o mais próximo possível do proposto acima.Considerações:
-•O aplicativo irá consistir em um SuperAppe um módulo principal que irálistar 
+• O design deve ser o mais próximo possível do proposto acima.Considerações:
+• O aplicativo irá consistir em um SuperAppe um módulo principal que irálistar 
 asmoedas favoritas;
-•Para funções e/ou componentes visuais em comuns entre SuperAppemóduloprincipal 
+• Para funções e/ou componentes visuais em comuns entre SuperAppemóduloprincipal 
 deverá ser construído um segundo modulo “Commons” que serácompartilhado entre 
 SuperAppe modulo principal;
-•Para favoritos deverá ser utilizado algum meio de persistência local como 
+• Para favoritos deverá ser utilizado algum meio de persistência local como 
 SharedPreferencesou SQLite(não salvando toda resposta da API, apenas chave valor 
 paramarcar uma moeda como favorito
