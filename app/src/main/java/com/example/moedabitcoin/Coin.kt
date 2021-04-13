@@ -1,3 +1,5 @@
+package com.example.moedabitcoin
+
 import com.google.gson.annotations.SerializedName
 
 data class Coin (
