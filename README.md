@@ -17,6 +17,7 @@ Fluxo alternativo -Tratativa dos erros (HTTP Errors)
 esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
 
 • Arquitetura MVVM;
+
 • Testes unitários em JUnit, Roboletrice / ou Mockk;
 • Tratativa dos erros de API;
 • Acessibilidade, utilizar https://guia-wcag.com/ para referência;
