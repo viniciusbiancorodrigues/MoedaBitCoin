@@ -1,4 +1,4 @@
-#MOedaBitCoin
+#MoedaBitCoin
 
 Esse desafio busca orientar os desenvolvedores Android, recém-chegados, a 
 respeitodaquilo que enxergamos como boas práticas de desenvolvimento de 
@@ -9,31 +9,31 @@ volume transacionado de cada moeda, assim comoadicionar moedas como favoritas
 
 Fluxo alternativo -Tratativa dos erros (HTTP Errors)
 
-1.400Bad Request --There is something wrong with your request
-2.401Unauthorized --Your API key is wrong
-3.403 Forbidden --Your API key doesn't have enough privileges to access this resource
-4.429 Too many requests --You have exceeded your API key rate limits
-5.550 No data --You requested specific single item that we don't have at thisPara que 
+1. 400 Bad Request --There is something wrong with your request
+2. 401 Unauthorized --Your API key is wrong
+3. 403 Forbidden --Your API key doesn't have enough privileges to access this resource
+4. 429 Too many requests --You have exceeded your API key rate limits
+5. 550 No data --You requested specific single item that we don't have at thisPara que 
 esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
 
-•Arquitetura MVVM;
-•Testes unitários em JUnit, Roboletrice / ou Mockk;
-•Tratativa dos erros de API;
-•Acessibilidade, utilizar https://guia-wcag.com/para referência;
-•Reaproveitamento dos objetos visuais;
-•Modularização.
+• Arquitetura MVVM;
+• Testes unitários em JUnit, Roboletrice / ou Mockk;
+• Tratativa dos erros de API;
+• Acessibilidade, utilizar https://guia-wcag.com/para referência;
+• Reaproveitamento dos objetos visuais;
+• Modularização.
 
 As características funcionais e não funcionais do app consistem em:
 
-•Lista de moedas com scrollinginfinito;
-•Adicionar uma moeda aos favoritos;
-•Visualizaçãopor hora, mês e ano do volume transacionado de cada moeda;
-•Controle de estado (se a moeda foi adicionada aos favoritos ou não);
-•Indicar como moeda favorita logo na telade listagem das moedas;
-•A tela de listagem de favoritos deve ser um modulo a parte assim 
+• Lista de moedas com scrollinginfinito;
+• Adicionar uma moeda aos favoritos;
+• Visualizaçãopor hora, mês e ano do volume transacionado de cada moeda;
+• Controle de estado (se a moeda foi adicionada aos favoritos ou não);
+• Indicar como moeda favorita logo na telade listagem das moedas;
+• A tela de listagem de favoritos deve ser um modulo a parte assim 
 como a tela dedetalhes (Só pode haver uma tela de detalhes para ser usada 
 no SuperAppe nodetalhamento de moedas favoritas);
-•Deve existir uma tela padrão para erro com a opção de “tentar novamente”;
+• Deve existir uma tela padrão para erro com a opção de “tentar novamente”;
 •O design deve ser o mais próximo possível do proposto acima.Considerações:
 •O aplicativo irá consistir em um SuperAppe um módulo principal que irálistar 
 asmoedas favoritas;
