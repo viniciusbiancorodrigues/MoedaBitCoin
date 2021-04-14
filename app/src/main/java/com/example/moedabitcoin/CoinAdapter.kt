@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -39,14 +40,22 @@ class CoinAdapter (
 
     inner class CoinViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val image: ImageView = itemView.findViewById(R.id.xxxxxxxxxxxxx)
+        private val icon: ImageView = itemView.findViewById(R.id.xxxxxxxxxxxxx)
+        private val assetId: TextView = itemView.findViewById(R.id.xxxxxxxxxxxx)
+        private val name: TextView = itemView.findViewById(R.id.xxxxxxxxxxxxx)
+        private val valueUsd: TextView = itemView.findViewById(R.id.xxxxxxxxxxx)
+
+
 
         fun bind(coins: Coin) {
+            name.text = "${coins.name}"
+            assetId.text = "${coins.assetId}"
+            valueUsd.text = "${coins.valueUsd}"
 
             Glide.with(itemView)
                 .load("https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32${coins.valueIcon}")
                 .transform(CenterCrop())
-                .into(image)
+                .into(icon)
             itemView.setOnClickListener {
                 onCoinClick
             }
