@@ -20,7 +20,7 @@ object CoinRetrofit {
     }
 
     fun getCryptoCurrency(
-            onSuccess: (coins: List<Coin>) -> Unit,
+            onSuccess: (coinModels: List<CoinModel>) -> Unit,
             onError: () -> Unit
     ) {
         api.getCoin()
@@ -33,7 +33,7 @@ object CoinRetrofit {
                             val responseBody = response.body()
 
                             if (responseBody != null) {
-                                onSuccess.invoke(responseBody.coins)
+                                onSuccess.invoke(responseBody.coinModels)
                             } else {
                                 onError.invoke()
                             }

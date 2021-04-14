@@ -10,8 +10,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 
 class CoinAdapter (
-        private var coins: MutableList<Coin>,
-        private val onCoinClick: (coin: Coin) -> Unit
+        private var coinModels: MutableList<CoinModel>,
+        private val onCoinClick: (coinModel: CoinModel) -> Unit
 ) : RecyclerView.Adapter<CoinAdapter.CoinViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -24,17 +24,17 @@ class CoinAdapter (
         return CoinViewHolder(view)
     }
 
-    override fun getItemCount(): Int = coins.size
+    override fun getItemCount(): Int = coinModels.size
 
     override fun onBindViewHolder(holder: CoinViewHolder, position: Int) {
-        holder.bind(coins[position])
+        holder.bind(coinModels[position])
     }
 
-    fun updateCoins(coins: List<Coin>) {
-        this.coins.addAll(coins)
+    fun updateCoins(coinModels: List<CoinModel>) {
+        this.coinModels.addAll(coinModels)
         notifyItemRangeInserted(
-            this.coins.size,
-            coins.size - 1
+            this.coinModels.size,
+            coinModels.size - 1
         )
     }
 
@@ -47,7 +47,7 @@ class CoinAdapter (
 
 
 
-        fun bind(coins: Coin) {
+        fun bind(coins: CoinModel) {
             name.text = "${coins.name}"
             assetId.text = "${coins.assetId}"
             valueUsd.text = "${coins.valueUsd}"
