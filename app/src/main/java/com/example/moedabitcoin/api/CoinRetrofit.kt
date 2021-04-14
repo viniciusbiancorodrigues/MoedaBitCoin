@@ -1,5 +1,7 @@
-package com.example.moedabitcoin
+package com.example.moedabitcoin.api
 
+import com.example.moedabitcoin.Coin
+import com.example.moedabitcoin.CoinResponse
 import retrofit2.Retrofit
 import retrofit2.Call
 import retrofit2.Response
