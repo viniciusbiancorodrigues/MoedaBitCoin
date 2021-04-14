@@ -1,23 +1,24 @@
 package com.example.moedabitcoin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moedabitcoin.api.CoinRetrofit
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var coinView: RecyclerView
-    lateinit var coinAdapter: CoinAdapter
-    lateinit var coinLayoutManager: LinearLayoutManager
+    private lateinit var coinView: RecyclerView
+    private lateinit var coinAdapter: CoinAdapter
+    private lateinit var coinLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        coinView = findViewById(R.id.coin_currency)
         coinLayoutManager = LinearLayoutManager(
                 this,
                 LinearLayoutManager.VERTICAL,
@@ -32,8 +33,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun getCryptoCoins() {
         CoinRetrofit.getCryptoCurrency(
-                ::onCoinCurrencyFetched,
-                ::onError
+               ::onCoinCurrencyFetched,
+               ::onError
         )
     }
 
@@ -43,11 +44,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onError() {
-        Toast.makeText(this, "Verifique sua conexão com a internet", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show()
     }
 
-//    private fun showCoinDetails(coin: CoinModel) {
-//        val intent = Intent(this, CoinDetails::class.java)
-//        intent.putExtra
-//    }
+    private fun showCoinDetails(coin: CoinModel) {
+    //    val intent = Intent(this, CoinDetails::class.java)
+    //    intent.putExtra
+    }
 }
