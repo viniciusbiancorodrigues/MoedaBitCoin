@@ -15,8 +15,4 @@ class CoinAccessibility : AccessibilityService (){
         }
 
     }
-
-    override fun onInterrupt() {
-
-    }
 }
