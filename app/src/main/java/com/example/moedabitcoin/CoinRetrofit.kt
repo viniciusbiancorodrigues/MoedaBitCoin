@@ -1,39 +1,66 @@
 package com.example.moedabitcoin
 
-import retrofit2.Retrofit
+import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
-import retrofit2.converter.gson.GsonConverterFactory
 
-object CoinRetrofit {
+class CoinRetrofit {
 
-    private val api: CoinApi
+    /*
+    val TAG: String = javaClass.simpleName
 
-    init {
-        val retrofit = Retrofit.Builder()
-                .baseUrl("https://rest.coinapi.io/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+    fun fetchCoins(): MutableLiveData<List<CoinModel>> {
+        var mutableList: MutableLiveData<List<CoinModel>> = MutableLiveData()
 
-        api = retrofit.create(CoinApi::class.java)
+        val apiInterface = RetrofitClient.getRetrofitInstance(Constants().BASE_URL)
+                .create(CoinApi::class.java)
+
+        apiInterface.getCoin().enqueue(object : Callback<List<CoinModel>> {
+            override fun onResponse(
+                    call: Call<List<CoinModel>>,
+                    response: Response<List<CoinModel>>
+            ) {
+                Log.e(TAG, "onResponse response=" + response.toString())
+
+                if (response.isSuccessful) {
+                    Log.e(TAG, "onResponse response.size=" + response.body()?.size)
+
+                    if (response.body() != null && response.body()?.size!! > 0) {
+                        mutableList.value = response.body()!!
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
+                Log.e(TAG, "onFailure call=" + call.toString())
+            }
+
+        })
+
+        return mutableList
     }
+}
+*/
+    private val api: CoinApi = RetrofitClient.getRetrofitInstance(Constants().BASE_URL)
+            .create(CoinApi::class.java)
 
     fun getCryptoCurrency(
-            onSuccess: (coinModels: List<CoinModel>) -> Unit,
+            onSuccess: (coinModel: List<CoinModel>) -> Unit,
             onError: () -> Unit
     ) {
         api.getCoin()
-                .enqueue(object : Callback<CoinResponse> {
+                .enqueue(object : Callback<List<CoinModel>> {
                     override fun onResponse(
-                            call : Call<CoinResponse>,
-                            response: Response<CoinResponse>
+                            call : Call<List<CoinModel>>,
+                            response: Response<List<CoinModel>>
                     ) {
                         if (response.isSuccessful) {
                             val responseBody = response.body()
 
                             if (responseBody != null) {
-                                onSuccess.invoke(responseBody.coinModels)
+                                onSuccess.invoke(responseBody.)
                             } else {
                                 onError.invoke()
                             }
@@ -42,9 +69,8 @@ object CoinRetrofit {
                         }
                     }
 
-                    override fun onFailure(call: Call<CoinResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
                         onError.invoke()
                     }
                 })
     }
-}
