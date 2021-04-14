@@ -1,11 +1,11 @@
 #MoedaBitCoin
 
 Esse desafio busca orientar os desenvolvedores Android, recém-chegados, a 
-respeitodaquilo que enxergamos como boas práticas de desenvolvimento de 
-software, no clienteItaú. O desafio consiste em criar um aplicativo que se 
-comunique via REST API, naplataforma CoinAPI(https://docs.coinapi.io/).
- É necessário que o app liste criptomoedas eque possibilite ver detalhes do 
-volume transacionado de cada moeda, assim comoadicionar moedas como favoritas
+respeito daquilo que enxergamos como boas práticas de desenvolvimento de 
+software, no cliente Itaú. O desafio consiste em criar um aplicativo que se 
+comunique via REST API, na plataforma CoinAPI(https://docs.coinapi.io/).
+ É necessário que o app liste criptomoedas e que possibilite ver detalhes do 
+volume transacionado de cada moeda, assim como adicionar moedas como favoritas
 
 Fluxo alternativo -Tratativa dos erros (HTTP Errors)
 
@@ -13,11 +13,11 @@ Fluxo alternativo -Tratativa dos erros (HTTP Errors)
 2. 401 Unauthorized --Your API key is wrong
 3. 403 Forbidden --Your API key doesn't have enough privileges to access this resource
 4. 429 Too many requests --You have exceeded your API key rate limits
-5. 550 No data --You requested specific single item that we don't have at thisPara que 
-esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
+5. 550 No data --You requested specific single item that we don't have at this 
+
+Para que esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
 
 • Arquitetura MVVM;
-
 • Testes unitários em JUnit, Roboletrice / ou Mockk;
 • Tratativa dos erros de API;
 • Acessibilidade, utilizar https://guia-wcag.com/ para referência;
