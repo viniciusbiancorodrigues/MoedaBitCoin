@@ -1,11 +1,6 @@
 package com.example.moedabitcoin.api
 
 import com.example.moedabitcoin.CoinResponse
-
-<<<<<<< HEAD:app/src/main/java/com/example/moedabitcoin/CoinApi.kt
-=======
->>>>>>> bf4171c8abd8b1925326c34358aebbf7b7821bb0:app/src/main/java/CoinApi.kt
-
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
