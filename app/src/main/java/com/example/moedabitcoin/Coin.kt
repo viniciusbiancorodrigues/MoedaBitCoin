@@ -1,3 +1,5 @@
+package com.example.moedabitcoin
+
 import com.google.gson.annotations.SerializedName
 
 data class Coin (
@@ -19,6 +21,7 @@ data class Coin (
 
         @SerializedName("price_usd")
         val valueUsd: Double?,
+        
         @SerializedName("id_icon")
         val valueIcon: String?
 

@@ -13,11 +13,11 @@ Fluxo alternativo -Tratativa dos erros (HTTP Errors)
 2. 401 Unauthorized --Your API key is wrong
 3. 403 Forbidden --Your API key doesn't have enough privileges to access this resource
 4. 429 Too many requests --You have exceeded your API key rate limits
-5. 550 No data --You requested specific single item that we don't have at thisPara que 
-esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
+5. 550 No data --You requested specific single item that we don't have at this 
+
+Para que esse desafio seja bem-sucedido, devemos seguir os seguintes padrões:
 
 • Arquitetura MVVM;
-
 • Testes unitários em JUnit, Roboletrice / ou Mockk;
 • Tratativa dos erros de API;
 • Acessibilidade, utilizar https://guia-wcag.com/ para referência;
