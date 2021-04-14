@@ -24,10 +24,10 @@ object CoinRetrofit {
             onError: () -> Unit
     ) {
         api.getCoin()
-                .enqueue(object : Callback<CoinsResponse> {
+                .enqueue(object : Callback<CoinResponse> {
                     override fun onResponse(
-                            call : Call<CoinsResponse>,
-                            response: Response<CoinsResponse>
+                            call : Call<CoinResponse>,
+                            response: Response<CoinResponse>
                     ) {
                         if (response.isSuccessful) {
                             val responseBody = response.body()
@@ -42,7 +42,7 @@ object CoinRetrofit {
                         }
                     }
 
-                    override fun onFailure(call: Call<CoinsResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<CoinResponse>, t: Throwable) {
                         onError.invoke()
                     }
                 })
