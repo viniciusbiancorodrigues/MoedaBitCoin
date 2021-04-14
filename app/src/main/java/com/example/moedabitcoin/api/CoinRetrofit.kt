@@ -1,13 +1,7 @@
 package com.example.moedabitcoin.api
 
-<<<<<<< HEAD:app/src/main/java/com/example/moedabitcoin/api/CoinRetrofit.kt
-import com.example.moedabitcoin.Coin
-import com.example.moedabitcoin.CoinResponse
-import retrofit2.Retrofit
-=======
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
->>>>>>> 201edc3dd0615df8d5a3bfd6115e3af09144469f:app/src/main/java/com/example/moedabitcoin/CoinRetrofit.kt
+import com.example.moedabitcoin.CoinModel
+import com.example.moedabitcoin.Constants
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
