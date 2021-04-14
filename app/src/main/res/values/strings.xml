@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoedaBitCoin</string>
+    <string name="accessibility_service_description">description</string>
+
 </resources>

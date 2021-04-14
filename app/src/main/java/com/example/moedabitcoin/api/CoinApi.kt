@@ -12,3 +12,4 @@ interface CoinApi {
     ): Call<List<CoinModel>>
 
 }
+
