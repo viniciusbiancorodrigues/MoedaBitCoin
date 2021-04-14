@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.moedabitcoin">
 
-    <application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+
         <service
         android:name=".api.CoinAccessibility"
         android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
