@@ -42,11 +42,11 @@ class CoinAdapter (
 
         private val icon: ImageView = itemView.findViewById(R.id.item_coin_icon)
 //        private val assetId: TextView = itemView.findViewById(R.id.xxxxxxxxxxxx)
-        private val name: TextView = itemView.findViewById(R.id.item_coin_name)
+//        private val name: TextView = itemView.findViewById(R.id.item_coin_name)
 //        private val valueUsd: TextView = itemView.findViewById(R.id.xxxxxxxxxxx)
 
       fun bind(coins: CoinModel) {
-            name.text = "${coins.name}"
+//            name.text = "${coins.name}"
 //            assetId.text = "${coins.assetId}"
 //            valueUsd.text = "${coins.valueUsd}"
 
