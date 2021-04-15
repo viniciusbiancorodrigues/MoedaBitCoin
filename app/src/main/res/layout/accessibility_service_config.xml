@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <accessibility-service
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:description="@string/accessibility_service_description"
     android:packageNames="com.example.android.apis"
     android:accessibilityEventTypes="typeViewClicked|typeViewFocused"
@@ -12,6 +11,5 @@
     android:settingsActivity="com.example.android.accessibility.ServiceSettingsActivity"
     android:layout_height="500dp"
     android:layout_width="match_parent"
-
 
     />
