@@ -3,12 +3,17 @@ package com.example.moedabitcoin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.style.LocaleSpan
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moedabitcoin.api.CoinRetrofit
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var coinView: RecyclerView
     private lateinit var coinAdapter: CoinAdapter
@@ -51,4 +56,13 @@ class MainActivity : AppCompatActivity() {
     //    val intent = Intent(this, CoinDetails::class.java)
     //    intent.putExtra
     }
-}
+//    val localeWrappedTextView = findViewById<TextView>(R.id.my_greeting_text).apply {
+//        text = wrapTextInLocaleSpan("Ola!", Locale.FRANCE)
+    }
+
+//    private fun wrapTextInLocaleSpan(originalText: CharSequence, loc: Locale): SpannableStringBuilder {
+//        return SpannableStringBuilder(originalText).apply {
+//            setSpan(LocaleSpan(loc), 0, originalText.length - 1, 0)
+//        }
+//    }
+//}
