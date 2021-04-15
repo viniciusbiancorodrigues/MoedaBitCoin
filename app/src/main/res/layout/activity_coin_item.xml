@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="32dp">
+    android:layout_height="32dp"
+    android:orientation="horizontal">
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coin_currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingStart="16sp"
+        android:paddingEnd="16sp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/item_coin_icon"
@@ -22,5 +34,5 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

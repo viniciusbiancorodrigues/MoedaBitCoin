@@ -56,13 +56,13 @@ class MainActivity : AppCompatActivity() {
     //    val intent = Intent(this, CoinDetails::class.java)
     //    intent.putExtra
     }
-    val localeWrappedTextView = findViewById<TextView>(R.id.my_greeting_text).apply {
-        text = wrapTextInLocaleSpan("Ola!", Locale.FRANCE)
+//    val localeWrappedTextView = findViewById<TextView>(R.id.my_greeting_text).apply {
+//        text = wrapTextInLocaleSpan("Ola!", Locale.FRANCE)
     }
 
-    private fun wrapTextInLocaleSpan(originalText: CharSequence, loc: Locale): SpannableStringBuilder {
-        return SpannableStringBuilder(originalText).apply {
-            setSpan(LocaleSpan(loc), 0, originalText.length - 1, 0)
-        }
-    }
-}
+//    private fun wrapTextInLocaleSpan(originalText: CharSequence, loc: Locale): SpannableStringBuilder {
+//        return SpannableStringBuilder(originalText).apply {
+//            setSpan(LocaleSpan(loc), 0, originalText.length - 1, 0)
+//        }
+//    }
+//}
