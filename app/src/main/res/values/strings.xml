@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MoedaBitCoin</string>
+    <string name="title_splash">Moeda Digital</string>
+    <string name="coins">Moedas</string>
+    <string name="favorites">Adicionadas</string>
+    <string name="tit_digital_coin">Moeda Digital</string>
 </resources>

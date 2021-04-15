@@ -1,18 +1,99 @@
 package com.example.moedabitcoin.api
 
-<<<<<<< HEAD:app/src/main/java/com/example/moedabitcoin/api/CoinRetrofit.kt
-import com.example.moedabitcoin.Coin
-import com.example.moedabitcoin.CoinResponse
-import retrofit2.Retrofit
-=======
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
->>>>>>> 201edc3dd0615df8d5a3bfd6115e3af09144469f:app/src/main/java/com/example/moedabitcoin/CoinRetrofit.kt
+import com.example.moedabitcoin.CoinModel
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class CoinRetrofit {
+object CoinRetrofit {
+
+    private val api: CoinApi
+
+    init {
+        val retrofit = Retrofit.Builder()
+                .baseUrl("https://rest.coinapi.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+        api = retrofit.create(CoinApi::class.java)
+    }
+
+    fun getCryptoCurrency(
+            onSuccess: (coins: List<CoinModel>) -> Unit,
+            onError: () -> Unit
+    ) {
+        api.getCoin().enqueue(object : Callback<List<CoinModel>> {
+            override fun onResponse(
+                    call: Call<List<CoinModel>>,
+                    response: Response<List<CoinModel>>
+            ) {
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+
+                    if (responseBody != null) {
+                        onSuccess.invoke(responseBody)
+                    } else {
+                        onError.invoke()
+                    }
+                } else {
+                    onError.invoke()
+                }
+            }
+
+            override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
+                onError.invoke()
+            }
+
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+//    private val api: CoinApi = RetrofitClient.getRetrofitInstance(Constants().BASE_URL)
+//            .create(CoinApi::class.java)
+//
+//    fun getCryptoCurrency(
+//            onSuccess: (coinModel: List<CoinModel>) -> Unit,
+//            onError: () -> Unit
+//    ) {
+//        api.getCoin()
+//                .enqueue(object : Callback<List<CoinModel>> {
+//                    override fun onResponse(
+//                            call: Call<List<CoinModel>>,
+//                            response: Response<List<CoinModel>>
+//                    ) {
+//                        if (response.isSuccessful) {
+//                            val responseBody = response.body()
+//
+//                            if (responseBody != null) {
+//                                onSuccess.invoke(responseBody)
+//                            } else {
+//                                onError.invoke()
+//                            }
+//                        } else {
+//                            onError.invoke()
+//                        }
+//                    }
+//
+//                    override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
+//                        onError.invoke()
+//                    }
+//                })
+//    }
+//}
 
     /*
     val TAG: String = javaClass.simpleName
@@ -49,34 +130,3 @@ class CoinRetrofit {
     }
 }
 */
-    private val api: CoinApi = RetrofitClient.getRetrofitInstance(Constants().BASE_URL)
-            .create(CoinApi::class.java)
-
-    fun getCryptoCurrency(
-            onSuccess: (coinModel: List<CoinModel>) -> Unit,
-            onError: () -> Unit
-    ) {
-        api.getCoin()
-                .enqueue(object : Callback<List<CoinModel>> {
-                    override fun onResponse(
-                            call : Call<List<CoinModel>>,
-                            response: Response<List<CoinModel>>
-                    ) {
-                        if (response.isSuccessful) {
-                            val responseBody = response.body()
-
-                            if (responseBody != null) {
-                                onSuccess.invoke(responseBody.)
-                            } else {
-                                onError.invoke()
-                            }
-                        } else {
-                            onError.invoke()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<List<CoinModel>>, t: Throwable) {
-                        onError.invoke()
-                    }
-                })
-    }
